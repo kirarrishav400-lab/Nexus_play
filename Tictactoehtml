@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tic Tac Toe | NexusPlay</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .game-page {
+        min-height: 100vh;
+        padding: 60px 8%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .back-btn {
+        align-self: flex-start;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 40px;
+        padding: 10px 18px;
+        border: 1px solid #7c3cff;
+        border-radius: 8px;
+    }
+
+    .game-title {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .game-status {
+        color: #a7adba;
+        margin-bottom: 30px;
+    }
+
+    .tic-board {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        gap: 10px;
+    }
+
+    .cell {
+        width: 100px;
+        height: 100px;
+        border: none;
+        border-radius: 12px;
+        background: #121827;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+        font-family: 'Orbitron', sans-serif;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cell:hover {
+        border-color: #7c3cff;
+    }
+
+    .reset-btn {
+        margin-top: 30px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        background: #7c3cff;
+        color: white;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @media (max-width: 500px) {
+        .tic-board {
+            grid-template-columns: repeat(3, 85px);
+        }
+
+        .cell {
+            width: 85px;
+            height: 85px;
+        }
+    }
+</style>
+
+</head><body><div class="game-page">
+
+    <a href="index.html" class="back-btn">← Back to NexusPlay</a>
+
+    <h1 class="game-title">TIC TAC TOE</h1>
+
+    <p class="game-status" id="status">
+        Player X's Turn
+    </p>
+
+    <div class="tic-board">
+
+        <button class="cell"></button>
+        <button class="cell"></button>
+        <button class="cell"></button>
+
+        <button class="cell"></button>
+        <button class="cell"></button>
+        <button class="cell"></button>
+
+        <button class="cell"></button>
+        <button class="cell"></button>
+        <button class="cell"></button>
+
+    </div>
+
+    <button class="reset-btn" onclick="resetGame()">
+        New Game
+    </button>
+
+</div>
+
+<script src="tictactoe.js"></script>
+
+</body>
+</html>
