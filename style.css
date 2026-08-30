@@ -99,3 +99,132 @@ footer p {color: #8b92a1;font-size: 13px;margin-top: 12px;}
     .games {padding: 70px 7%; }
 
     .play-btn {padding: 10px 15px; }}
+/* ================= RESULT POPUP ================= */
+
+.result-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 7, 15, 0.75);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 9999;
+}
+
+.result-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.result-popup {
+    width: 100%;
+    max-width: 380px;
+
+    background: linear-gradient(
+        145deg,
+        #161d30,
+        #0c101c
+    );
+
+    border: 1px solid rgba(124, 60, 255, 0.5);
+
+    border-radius: 24px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.6),
+        0 0 50px rgba(124, 60, 255, 0.2);
+
+    transform: scale(0.8) translateY(30px);
+
+    transition: 0.35s;
+}
+
+.result-overlay.show .result-popup {
+    transform: scale(1) translateY(0);
+}
+
+.result-emoji {
+    font-size: 75px;
+    margin-bottom: 15px;
+
+    animation: resultFloat 2s ease-in-out infinite;
+}
+
+@keyframes resultFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.result-popup h2 {
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.result-popup p {
+    color: #a7adba;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+#playAgainBtn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3cff,
+            #a855f7
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    transition: 0.3s;
+}
+
+#playAgainBtn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(124, 60, 255, 0.4);
+}
